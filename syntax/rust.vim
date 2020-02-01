@@ -138,6 +138,12 @@ for s:standardLibraryConst in s:standardLibraryConsts
 endfor
 
 "
+" Functions
+"
+
+syntax match rustFunction '\v[a-z][a-z0-9_]*(\()@='
+
+"
 " Type definitions
 "
 
@@ -162,6 +168,7 @@ syntax match rustIdentDef '\v[A-Z][A-Z0-9_]*' contained display
 
 highlight link rustConditional Conditional
 highlight link rustFuncDef Function
+highlight link rustFunction Function
 highlight link rustIdentDef Identifier
 highlight link rustInclude Include
 highlight link rustKeyword Keyword
