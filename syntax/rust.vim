@@ -122,13 +122,31 @@ for s:standardLibraryType in s:standardLibraryTypes
 endfor
 
 "
+" User-defined constants
+"
+
+syntax match rustUserConst '\v<[A-Z][A-Z0-9_]'
+
+"
+" Standard library constants
+"
+
+let s:standardLibraryConsts = ["ARCH", "ATOMIC_BOOL_INIT", "ATOMIC_I16_INIT", "ATOMIC_I32_INIT", "ATOMIC_I64_INIT", "ATOMIC_I8_INIT", "ATOMIC_ISIZE_INIT", "ATOMIC_U16_INIT", "ATOMIC_U32_INIT", "ATOMIC_U64_INIT", "ATOMIC_U8_INIT", "ATOMIC_USIZE_INIT", "DIGITS", "DLL_EXTENSION", "DLL_PREFIX", "DLL_SUFFIX", "E", "EPSILON", "EXE_EXTENSION", "EXE_SUFFIX", "FAMILY", "FRAC_1_PI", "FRAC_1_SQRT_2", "FRAC_2_PI", "FRAC_2_SQRT_PI", "FRAC_PI_2", "FRAC_PI_3", "FRAC_PI_4", "FRAC_PI_6", "FRAC_PI_8", "INFINITY", "LN_10", "LN_2", "LOG10_2", "LOG10_E", "LOG2_10", "LOG2_E", "MAIN_SEPARATOR", "MANTISSA_DIGITS", "MAX", "MAX_10_EXP", "MAX_EXP", "MIN", "MIN_10_EXP", "MIN_EXP", "MIN_POSITIVE", "NAN", "NEG_INFINITY", "ONCE_INIT", "OS", "PI", "RADIX", "REPLACEMENT_CHARACTER", "SQRT_2", "TAU", "UNICODE_VERSION", "UNIX_EPOCH"]
+
+for s:standardLibraryConst in s:standardLibraryConsts
+    execute 'syntax keyword rustLibraryConst ' . s:standardLibraryConst
+endfor
+
+"
 " Default linkages
 "
 
 highlight link rustConditional Conditional
 highlight link rustInclude Include
 highlight link rustKeyword Keyword
+highlight link rustLibraryConst Constant
 highlight link rustLibraryType Type
 highlight link rustRepeat Repeat
 highlight link rustString String
+highlight link rustUserConst Constant
 highlight link rustUserType Type
