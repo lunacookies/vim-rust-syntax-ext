@@ -43,29 +43,29 @@ syntax keyword rustAs as
 syntax keyword rustAsync async
 syntax keyword rustAwait await
 syntax keyword rustBreak break
-syntax keyword rustConst const
+syntax keyword rustConst const nextgroup=rustIdentDef skipwhite skipempty
 syntax keyword rustContinue continue
 syntax keyword rustCrate crate
 syntax keyword rustDyn dyn
-syntax keyword rustEnum enum
+syntax keyword rustEnum enum nextgroup=rustTypeDef skipwhite skipempty
 syntax keyword rustExtern extern
-syntax keyword rustFn fn
+syntax keyword rustFn fn nextgroup=rustFuncDef skipwhite skipempty
 syntax keyword rustImpl impl
 syntax keyword rustIn in
-syntax keyword rustLet let
+syntax keyword rustLet let nextgroup=rustIdentDef,rustMut,rustRef skipwhite skipempty
 syntax keyword rustMod mod
 syntax keyword rustMove move
-syntax keyword rustMut mut
+syntax keyword rustMut mut nextgroup=rustIdentDef,rustLibraryType,rustSelfType,rustSelfValue,rustUserType skipwhite skipempty
 syntax keyword rustPub pub
-syntax keyword rustRef ref
+syntax keyword rustRef ref nextgroup=rustIdentDef,rustMut skipwhite skipempty
 syntax keyword rustReturn return
 syntax keyword rustSelfType Self
 syntax keyword rustSelfValue self
-syntax keyword rustStatic static
-syntax keyword rustStruct struct
+syntax keyword rustStatic static nextgroup=rustIdentDef,rustRef skipwhite skipempty
+syntax keyword rustStruct struct nextgroup=rustTypeDef skipwhite skipempty
 syntax keyword rustSuper super
-syntax keyword rustTrait trait
-syntax keyword rustTypeAlias type
+syntax keyword rustTrait trait nextgroup=rustTypeDef skipwhite skipempty
+syntax keyword rustTypeAlias type nextgroup=rustTypeDef skipwhite skipempty
 syntax keyword rustUnsafe unsafe
 syntax keyword rustWhere where
 
@@ -138,15 +138,37 @@ for s:standardLibraryConst in s:standardLibraryConsts
 endfor
 
 "
+" Type definitions
+"
+
+syntax match rustTypeDef '\v[A-Z][A-Za-z0-9]*' contained display
+
+"
+" Function definitions
+"
+
+syntax match rustFuncDef '\v<[a-z][a-z0-9_]*(\()@=' contained display
+
+"
+" Identifier definitions
+"
+
+syntax match rustIdentDef '\v[a-z][a-z0-9_]*' contained display
+syntax match rustIdentDef '\v[A-Z][A-Z0-9_]*' contained display
+
+"
 " Default linkages
 "
 
 highlight link rustConditional Conditional
+highlight link rustFuncDef Function
+highlight link rustIdentDef Identifier
 highlight link rustInclude Include
 highlight link rustKeyword Keyword
 highlight link rustLibraryConst Constant
 highlight link rustLibraryType Type
 highlight link rustRepeat Repeat
 highlight link rustString String
+highlight link rustTypeDef Typedef
 highlight link rustUserConst Constant
 highlight link rustUserType Type
