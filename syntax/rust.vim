@@ -100,6 +100,12 @@ highlight link rustUnsafe rustKeyword
 highlight link rustWhere rustKeyword
 
 "
+" Strings
+"
+
+syntax region rustString start='"' end='"'
+
+"
 " Default linkages
 "
 
@@ -107,3 +113,4 @@ highlight link rustConditional Conditional
 highlight link rustInclude Include
 highlight link rustKeyword Keyword
 highlight link rustRepeat Repeat
+highlight link rustString String
