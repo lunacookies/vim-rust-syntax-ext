@@ -140,6 +140,12 @@ for s:standardLibraryConst in s:standardLibraryConsts
 endfor
 
 "
+" User-defined macros
+"
+
+syntax match rustUserMacro '\v<[a-z][a-z0-9_]*!'
+
+"
 " Functions
 "
 
@@ -225,4 +231,5 @@ highlight default link rustRepeat Repeat
 highlight default link rustString String
 highlight default link rustTypeDef Typedef
 highlight default link rustUserConst Constant
+highlight default link rustUserMacro Macro
 highlight default link rustUserType Type
