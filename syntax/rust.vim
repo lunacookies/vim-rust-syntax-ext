@@ -112,6 +112,12 @@ highlight default link rustWhere rustKeyword
 syntax region rustString start='"' end='"'
 
 "
+" Characters
+"
+
+syntax match rustCharacter "'.'"
+
+"
 " User-defined types
 "
 
@@ -266,6 +272,7 @@ syntax match rustCommentNote '\v[A-Z]+(:)@='
 "
 
 highlight default link rustAttribute rustKeyword
+highlight default link rustCharacter Character
 highlight default link rustComment Comment
 highlight default link rustCommentNote Todo
 highlight default link rustConditional Conditional
