@@ -201,6 +201,12 @@ syntax match rustIdentDef '\v[a-z][a-z0-9_]*' contained display
 syntax match rustIdentDef '\v[A-Z][A-Z0-9_]*' contained display
 
 "
+" Field access
+"
+
+syntax match rustFieldAccess '\v(\.)@<=[a-z][a-z0-9_]*'
+
+"
 " Numbers
 "
 
@@ -258,6 +264,7 @@ highlight default link rustCommentNote Todo
 highlight default link rustConditional Conditional
 highlight default link rustDelimiter Delimiter
 highlight default link rustDocComment SpecialComment
+highlight default link rustFieldAccess Identifier
 highlight default link rustFloat Float
 highlight default link rustFuncDef Function
 highlight default link rustFunction Function
