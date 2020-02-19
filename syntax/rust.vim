@@ -12,9 +12,9 @@ syntax keyword rustElse else
 syntax keyword rustIf if
 syntax keyword rustMatch match
 
-highlight link rustElse rustConditional
-highlight link rustIf rustConditional
-highlight link rustMatch rustConditional
+highlight default link rustElse rustConditional
+highlight default link rustIf rustConditional
+highlight default link rustMatch rustConditional
 
 "
 " Repeat
@@ -24,16 +24,16 @@ syntax keyword rustFor for
 syntax keyword rustLoop loop
 syntax keyword rustWhile while
 
-highlight link rustFor rustRepeat
-highlight link rustLoop rustRepeat
-highlight link rustWhile rustRepeat
+highlight default link rustFor rustRepeat
+highlight default link rustLoop rustRepeat
+highlight default link rustWhile rustRepeat
 
 "
 " Includes
 "
 
 syntax keyword rustUse use
-highlight link rustUse rustInclude
+highlight default link rustUse rustInclude
 
 "
 " Other keywords
@@ -69,35 +69,35 @@ syntax keyword rustTypeAlias type nextgroup=rustTypeDef skipwhite skipempty
 syntax keyword rustUnsafe unsafe
 syntax keyword rustWhere where
 
-highlight link rustAs rustKeyword
-highlight link rustAsync rustKeyword
-highlight link rustAwait rustKeyword
-highlight link rustBreak rustKeyword
-highlight link rustConst rustKeyword
-highlight link rustContinue rustKeyword
-highlight link rustCrate rustKeyword
-highlight link rustDyn rustKeyword
-highlight link rustEnum rustKeyword
-highlight link rustExtern rustKeyword
-highlight link rustFn rustKeyword
-highlight link rustImpl rustKeyword
-highlight link rustIn rustKeyword
-highlight link rustLet rustKeyword
-highlight link rustMod rustKeyword
-highlight link rustMove rustKeyword
-highlight link rustMut rustKeyword
-highlight link rustPub rustKeyword
-highlight link rustRef rustKeyword
-highlight link rustReturn rustKeyword
-highlight link rustSelfType rustKeyword
-highlight link rustSelfValue rustKeyword
-highlight link rustStatic rustKeyword
-highlight link rustStruct rustKeyword
-highlight link rustSuper rustKeyword
-highlight link rustTrait rustKeyword
-highlight link rustTypeAlias rustKeyword
-highlight link rustUnsafe rustKeyword
-highlight link rustWhere rustKeyword
+highlight default link rustAs rustKeyword
+highlight default link rustAsync rustKeyword
+highlight default link rustAwait rustKeyword
+highlight default link rustBreak rustKeyword
+highlight default link rustConst rustKeyword
+highlight default link rustContinue rustKeyword
+highlight default link rustCrate rustKeyword
+highlight default link rustDyn rustKeyword
+highlight default link rustEnum rustKeyword
+highlight default link rustExtern rustKeyword
+highlight default link rustFn rustKeyword
+highlight default link rustImpl rustKeyword
+highlight default link rustIn rustKeyword
+highlight default link rustLet rustKeyword
+highlight default link rustMod rustKeyword
+highlight default link rustMove rustKeyword
+highlight default link rustMut rustKeyword
+highlight default link rustPub rustKeyword
+highlight default link rustRef rustKeyword
+highlight default link rustReturn rustKeyword
+highlight default link rustSelfType rustKeyword
+highlight default link rustSelfValue rustKeyword
+highlight default link rustStatic rustKeyword
+highlight default link rustStruct rustKeyword
+highlight default link rustSuper rustKeyword
+highlight default link rustTrait rustKeyword
+highlight default link rustTypeAlias rustKeyword
+highlight default link rustUnsafe rustKeyword
+highlight default link rustWhere rustKeyword
 
 "
 " Strings
@@ -199,23 +199,23 @@ syntax match rustDelimiter '[(){}\[\]<>,:;]\+'
 " Default linkages
 "
 
-highlight link rustComment Comment
-highlight link rustCommentNote Todo
-highlight link rustConditional Conditional
-highlight link rustDelimiter Delimiter
-highlight link rustDocComment SpecialComment
-highlight link rustFloat Float
-highlight link rustFuncDef Function
-highlight link rustFunction Function
-highlight link rustIdentDef Identifier
-highlight link rustInclude Include
-highlight link rustKeyword Keyword
-highlight link rustLibraryConst Constant
-highlight link rustLibraryType Type
-highlight link rustNumber Number
-highlight link rustOperator Operator
-highlight link rustRepeat Repeat
-highlight link rustString String
-highlight link rustTypeDef Typedef
-highlight link rustUserConst Constant
-highlight link rustUserType Type
+highlight default link rustComment Comment
+highlight default link rustCommentNote Todo
+highlight default link rustConditional Conditional
+highlight default link rustDelimiter Delimiter
+highlight default link rustDocComment SpecialComment
+highlight default link rustFloat Float
+highlight default link rustFuncDef Function
+highlight default link rustFunction Function
+highlight default link rustIdentDef Identifier
+highlight default link rustInclude Include
+highlight default link rustKeyword Keyword
+highlight default link rustLibraryConst Constant
+highlight default link rustLibraryType Type
+highlight default link rustNumber Number
+highlight default link rustOperator Operator
+highlight default link rustRepeat Repeat
+highlight default link rustString String
+highlight default link rustTypeDef Typedef
+highlight default link rustUserConst Constant
+highlight default link rustUserType Type
