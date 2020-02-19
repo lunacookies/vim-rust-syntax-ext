@@ -1,7 +1,4 @@
-if exists("b:current_syntax")
-    finish
-endif
-
+syntax clear
 let b:current_syntax = "rust"
 
 syntax region rustTypeParams matchgroup=rustDelimiter start='<' end='>' keepend contains=TOP
