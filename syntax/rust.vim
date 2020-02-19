@@ -146,6 +146,16 @@ endfor
 syntax match rustUserMacro '\v<[a-z][a-z0-9_]*!'
 
 "
+" Standard library macros
+"
+
+let s:standardLibraryMacros = ["asm", "assert", "assert_eq", "assert_ne", "cfg", "column", "compile_error", "concat", "concat_idents", "dbg", "debug_assert", "debug_assert_eq", "debug_assert_ne", "env", "eprint", "eprintln", "file", "format", "format_args", "format_args_nl", "global_asm", "include", "include_bytes", "include_str", "is_aarch64_feature_detected", "is_arm_feature_detected", "is_mips64_feature_detected", "is_mips_feature_detected", "is_powerpc64_feature_detected", "is_powerpc_feature_detected", "is_x86_feature_detected", "line", "log_syntax", "matches", "module_path", "option_env", "panic", "print", "println", "stringify", "thread_local", "todo", "trace_macros", "try", "unimplemented", "unreachable", "vec", "write", "writeln"]
+
+for s:standardLibraryMacro in s:standardLibraryMacros
+    execute 'syntax match rustLibraryMacro "\v<' . s:standardLibraryMacro . '!"'
+endfor
+
+"
 " Functions
 "
 
@@ -224,6 +234,7 @@ highlight default link rustIdentDef Identifier
 highlight default link rustInclude Include
 highlight default link rustKeyword Keyword
 highlight default link rustLibraryConst Constant
+highlight default link rustLibraryMacro Macro
 highlight default link rustLibraryType Type
 highlight default link rustNumber Number
 highlight default link rustOperator Operator
