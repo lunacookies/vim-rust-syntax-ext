@@ -112,6 +112,14 @@ highlight default link rustWhere rustKeyword
 syntax region rustString start='"' end='"'
 
 "
+" Lifetimes
+"
+
+syntax match rustLifetime "'_" " Inferred
+syntax match rustLifetime "'static" " Static
+syntax match rustLifetime "'[a-z][a-z0-9_]*"
+
+"
 " Characters
 "
 
@@ -288,6 +296,7 @@ highlight default link rustKeyword Keyword
 highlight default link rustLibraryConst Constant
 highlight default link rustLibraryMacro Macro
 highlight default link rustLibraryType Type
+highlight default link rustLifetime Special
 highlight default link rustNumber Number
 highlight default link rustOperator Operator
 highlight default link rustRepeat Repeat
