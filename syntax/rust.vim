@@ -203,6 +203,12 @@ syntax match rustNumber '\v<[0-9_]+>'
 syntax match rustFloat '\v<[0-9_]+\.[0-9_]+>'
 
 "
+" Delimiters
+"
+
+syntax match rustDelimiter '[(){}\[\]<>,:;]\+'
+
+"
 " Operators
 "
 
@@ -211,12 +217,6 @@ let operators = ['+', '-', '\*', '/', '%', '\^', '!', '&', '|', '&&', '||', '<<'
 for operator in operators
     execute 'syntax match rustOperator "\S\@<!' . operator . '\S\@!"'
 endfor
-
-"
-" Delimiters
-"
-
-syntax match rustDelimiter '[(){}\[\]<>,:;]\+'
 
 "
 " Default linkages
