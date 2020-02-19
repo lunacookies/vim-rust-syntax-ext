@@ -66,6 +66,7 @@ syntax keyword rustStruct struct nextgroup=rustTypeDef skipwhite skipempty
 syntax keyword rustSuper super
 syntax keyword rustTrait trait nextgroup=rustTypeDef skipwhite skipempty
 syntax keyword rustTypeAlias type nextgroup=rustTypeDef skipwhite skipempty
+syntax keyword rustUnion union nextgroup=rustTypeDef skipwhite skipempty
 syntax keyword rustUnsafe unsafe
 syntax keyword rustWhere where
 
@@ -96,6 +97,7 @@ highlight default link rustStruct rustKeyword
 highlight default link rustSuper rustKeyword
 highlight default link rustTrait rustKeyword
 highlight default link rustTypeAlias rustKeyword
+highlight default link rustUnion rustKeyword
 highlight default link rustUnsafe rustKeyword
 highlight default link rustWhere rustKeyword
 
