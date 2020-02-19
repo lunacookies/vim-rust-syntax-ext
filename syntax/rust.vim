@@ -242,6 +242,11 @@ syntax match rustDelimiter '[(){}\[\]|\.,:;]\+'
 
 syntax match rustOperator '[!%&/\*+<=>?\^-]\+'
 
+" We highlight mutable references separately as an operator because otherwise
+" they would be recognised as the ‘mut’ keyword, thus whatever comes after the
+" ‘mut’ is highlighted as an identifier definition.
+syntax match rustOperator '&mut'
+
 "
 " Comments
 "
