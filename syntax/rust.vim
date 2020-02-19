@@ -227,7 +227,7 @@ syntax region rustPattern
 " Field access
 "
 
-syntax match rustFieldAccess '\v(\.)@<=[a-z][a-z0-9_]*'
+syntax match rustFieldAccess '\v(\.)@<=[a-z][a-z0-9_]*>(\()@!'
 
 "
 " Numbers
