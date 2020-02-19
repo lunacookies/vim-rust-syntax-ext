@@ -54,7 +54,7 @@ syntax keyword rustExtern extern
 syntax keyword rustFn fn nextgroup=rustFuncDef skipwhite skipempty
 syntax keyword rustImpl impl
 syntax keyword rustIn in
-syntax keyword rustLet let nextgroup=rustIdentDef,rustMut,rustRef skipwhite skipempty
+syntax keyword rustLet let nextgroup=rustIdentDef,rustMut,rustRef,rustPattern skipwhite skipempty
 syntax keyword rustMod mod
 syntax keyword rustMove move
 syntax keyword rustMut mut nextgroup=rustIdentDef,rustLibraryType,rustSelfType,rustSelfValue,rustUserType skipwhite skipempty
@@ -213,8 +213,15 @@ syntax match rustFuncDef '\v<[a-z][a-z0-9_]*'
 " Identifier definitions
 "
 
-syntax match rustIdentDef '\v[a-z][a-z0-9_]*' contained display
-syntax match rustIdentDef '\v[A-Z][A-Z0-9_]*' contained display
+syntax match rustIdentDef '\v<[a-z][a-z0-9_]*>' contained display
+syntax match rustIdentDef '\v<[A-Z][A-Z0-9_]*>' contained display
+
+syntax region rustPattern
+            \ matchgroup=rustDelimiter
+            \ start='('
+            \ end=')'
+            \ contained
+            \ contains=rustMut,rustDelimiter,rustLibraryType,rustUserType,rustIdentDef
 
 "
 " Field access
