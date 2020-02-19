@@ -221,7 +221,7 @@ syntax region rustPattern
             \ start='('
             \ end=')'
             \ contained
-            \ contains=rustMut,rustDelimiter,rustLibraryType,rustUserType,rustIdentDef
+            \ contains=rustMut,rustDelimiter,rustOperator,rustLibraryType,rustUserType,rustIdentDef
 
 "
 " Field access
