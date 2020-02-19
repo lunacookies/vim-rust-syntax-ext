@@ -156,7 +156,7 @@ syntax match rustTypeDef '\v(\<.{-})@<=[A-Z][A-Za-z0-9]*((:\s*.{-}|,.{-}|)\>)@='
 " Function definitions
 "
 
-syntax match rustFuncDef '\v<[a-z][a-z0-9_]*(\()@=' contained display
+syntax match rustFuncDef '\v<[a-z][a-z0-9_]*' contained display
 
 "
 " Identifier definitions
