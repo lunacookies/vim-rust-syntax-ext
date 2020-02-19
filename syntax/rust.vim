@@ -163,6 +163,16 @@ syntax match rustIdentDef '\v[a-z][a-z0-9_]*' contained display
 syntax match rustIdentDef '\v[A-Z][A-Z0-9_]*' contained display
 
 "
+" Comments
+"
+
+syntax region rustComment start='//' end='$'
+syntax region rustDocComment start='///' end='$'
+syntax region rustDocComment start='//!' end='$'
+
+syntax match rustCommentNote '\v[A-Z]+(:)@=' containedin=rustComment,rustDocComment
+
+"
 " Numbers
 "
 
@@ -173,7 +183,10 @@ syntax match rustFloat '\v<[0-9_]+\.[0-9_]+>'
 " Default linkages
 "
 
+highlight link rustComment Comment
+highlight link rustCommentNote Todo
 highlight link rustConditional Conditional
+highlight link rustDocComment SpecialComment
 highlight link rustFloat Float
 highlight link rustFuncDef Function
 highlight link rustFunction Function
