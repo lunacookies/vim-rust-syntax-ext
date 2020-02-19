@@ -173,7 +173,9 @@ syntax region rustComment start='//' end='$'
 syntax region rustDocComment start='///' end='$'
 syntax region rustDocComment start='//!' end='$'
 
-syntax match rustCommentNote '\v[A-Z]+(:)@=' containedin=rustComment,rustDocComment
+syntax match rustCommentNote '\v[A-Z]+(:)@='
+            \ contained
+            \ containedin=rustComment,rustDocComment
 
 "
 " Numbers
