@@ -190,12 +190,19 @@ for operator in operators
 endfor
 
 "
+" Delimiters
+"
+
+syntax match rustDelimiter '[(){}\[\]<>,:;]\+'
+
+"
 " Default linkages
 "
 
 highlight link rustComment Comment
 highlight link rustCommentNote Todo
 highlight link rustConditional Conditional
+highlight link rustDelimiter Delimiter
 highlight link rustDocComment SpecialComment
 highlight link rustFloat Float
 highlight link rustFuncDef Function
