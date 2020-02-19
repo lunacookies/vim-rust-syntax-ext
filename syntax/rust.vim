@@ -149,6 +149,9 @@ syntax match rustFunction '\v[a-z][a-z0-9_]*(\()@='
 
 syntax match rustTypeDef '\v[A-Z][A-Za-z0-9]*' contained display
 
+" Generics
+syntax match rustTypeDef '\v(\<.{-})@<=[A-Z][A-Za-z0-9]*((:\s*.{-}|,.{-}|)\>)@='
+
 "
 " Function definitions
 "
