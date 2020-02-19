@@ -109,7 +109,7 @@ highlight default link rustWhere rustKeyword
 " Strings
 "
 
-syntax region rustString start='"' skip='\\"' end='"'
+syntax region rustString start='b\?"' skip='\\"' end='"'
 
 "
 " Lifetimes
