@@ -125,7 +125,7 @@ endfor
 " User-defined constants
 "
 
-syntax match rustUserConst '\v<[A-Z][A-Z0-9_]*>'
+syntax match rustUserConst '\v<[A-Z][A-Z0-9_]+>'
 
 "
 " Standard library constants
