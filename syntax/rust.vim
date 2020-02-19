@@ -163,10 +163,18 @@ syntax match rustIdentDef '\v[a-z][a-z0-9_]*' contained display
 syntax match rustIdentDef '\v[A-Z][A-Z0-9_]*' contained display
 
 "
+" Numbers
+"
+
+syntax match rustNumber '\v<[0-9_]+>'
+syntax match rustFloat '\v<[0-9_]+\.[0-9_]+>'
+
+"
 " Default linkages
 "
 
 highlight link rustConditional Conditional
+highlight link rustFloat Float
 highlight link rustFuncDef Function
 highlight link rustFunction Function
 highlight link rustIdentDef Identifier
@@ -174,6 +182,7 @@ highlight link rustInclude Include
 highlight link rustKeyword Keyword
 highlight link rustLibraryConst Constant
 highlight link rustLibraryType Type
+highlight link rustNumber Number
 highlight link rustRepeat Repeat
 highlight link rustString String
 highlight link rustTypeDef Typedef
