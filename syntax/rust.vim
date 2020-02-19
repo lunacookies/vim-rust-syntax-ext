@@ -203,6 +203,23 @@ syntax match rustNumber '\v<[0-9_]+>'
 syntax match rustFloat '\v<[0-9_]+\.[0-9_]+>'
 
 "
+" Attributes
+"
+
+syntax region rustAttribute
+            \ matchgroup=rustDelimiter
+            \ start='#\['
+            \ skip='\v\(.*\)'
+            \ end='\]'
+
+syntax region rustAttributeParenWrapped
+            \ start='('
+            \ end=')'
+            \ containedin=rustAttribute
+            \ contains=TOP
+            \ keepend
+
+"
 " Delimiters
 "
 
@@ -222,6 +239,7 @@ endfor
 " Default linkages
 "
 
+highlight default link rustAttribute rustKeyword
 highlight default link rustComment Comment
 highlight default link rustCommentNote Todo
 highlight default link rustConditional Conditional
