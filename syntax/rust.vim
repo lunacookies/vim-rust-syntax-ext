@@ -165,16 +165,25 @@ syntax match rustFunction '\v[a-z][a-z0-9_]*(\()@='
 " Type definitions
 "
 
-syntax match rustTypeDef '\v[A-Z][A-Za-z0-9]*' contained display
+syntax match rustTypeDef '\v[A-Z][A-Za-z0-9]*'
+            \ contained
+            \ nextgroup=rustTypeParams
 
-" Generics
-syntax match rustTypeDef '\v(\<(.{-},\s*|))@<=[A-Z][A-Za-z0-9]*((:\s*.{-}|,.{-}|)\>)@='
+" Type parameters
+syntax region rustTypeParams start='<' end='>' keepend contains=TOP
+syntax match rustTypeParamDef '\v(:\s*)@<![A-Z][A-Za-z0-9]*'
+            \ contained
+            \ containedin=rustTypeParams
+
+highlight default link rustTypeParamDef rustTypeDef
 
 "
 " Function definitions
 "
 
-syntax match rustFuncDef '\v<[a-z][a-z0-9_]*' contained display
+syntax match rustFuncDef '\v<[a-z][a-z0-9_]*'
+            \ contained
+            \ nextgroup=rustTypeParams
 
 "
 " Identifier definitions
