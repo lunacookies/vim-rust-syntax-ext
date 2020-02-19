@@ -180,6 +180,16 @@ syntax match rustNumber '\v<[0-9_]+>'
 syntax match rustFloat '\v<[0-9_]+\.[0-9_]+>'
 
 "
+" Operators
+"
+
+let operators = ['+', '-', '\*', '/', '%', '\^', '!', '&', '|', '&&', '||', '<<', '>>', '+=', '-=', '\*=', '/=', '%=', '\^=', '&=', '|=', '<<=', '>>=', '=', '==', '!=', '>', '<', '>=', '<=', '@', '\.\.', '\.\.\.', '\.\.=', '->', '=>', '#', '?']
+
+for operator in operators
+    execute 'syntax match rustOperator "\S\@<!' . operator . '\S\@!"'
+endfor
+
+"
 " Default linkages
 "
 
@@ -196,6 +206,7 @@ highlight link rustKeyword Keyword
 highlight link rustLibraryConst Constant
 highlight link rustLibraryType Type
 highlight link rustNumber Number
+highlight link rustOperator Operator
 highlight link rustRepeat Repeat
 highlight link rustString String
 highlight link rustTypeDef Typedef
