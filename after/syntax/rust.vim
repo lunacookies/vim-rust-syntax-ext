@@ -49,7 +49,7 @@ syntax keyword rsDyn dyn
 syntax keyword rsEnum enum nextgroup=rsTypeDef skipwhite skipempty
 syntax keyword rsExtern extern
 syntax keyword rsFn fn nextgroup=rsFuncDef skipwhite skipempty
-syntax keyword rsImpl impl
+syntax keyword rsImpl impl nextgroup=rsTypeDefParams
 syntax keyword rsIn in
 syntax keyword rsLet let nextgroup=rsIdentDef,rsMut,rsRef,rsPattern skipwhite skipempty
 syntax keyword rsMod mod
