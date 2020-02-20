@@ -14,6 +14,8 @@ And here is a screenshot using vim-rust-syntax-ext:
 
 ## Features (some of which rust.vim also has)
 
+*Sorry for the bad/incorrect/inconsistent code in the following screenshots. After a while you star to run out of fake code ideas …*
+
 *Note that features which may require colourscheme support to be differentiated from other highlight groups are marked with an asterisk.*
 
 vim-rust-syntax-ext highlights function definitions\*:
