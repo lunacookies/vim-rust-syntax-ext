@@ -132,7 +132,17 @@ syntax match rsUserType '\v<[A-Z][A-Za-z0-9]*' nextgroup=rsTypeParams
 " Types from other modules
 "
 
-syntax match rsForeignType '\v(::)@<=[A-Z][A-Za-z0-9]*' nextgroup=rsTypeParams
+" We need to guard against enum variants being highlighted as foreign types
+" because they are after a path separator (‘::’). We do this by matching
+" types that are preceded by a path separator, but only if that path separator:
+"
+" - is preceded by a module name (this starts with a word boundary to prevent
+"   partially matching on a type name)
+" - is preceded by another type and another path separator (in this case we are
+"   a variant of a foreign enum)
+syntax match rsForeignType
+            \ '\v((<[a-z][a-z0-9_]*|::[A-Z][A-Za-z0-9]*)::)@<=[A-Z][A-Za-z0-9]*'
+            \ nextgroup=rsTypeParams
 
 "
 " Standard library types
