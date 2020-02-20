@@ -69,6 +69,11 @@ Here are some of the more important links you may want to customise:
 - `rs{Type,Func,Ident}Def`: These highlight groups are used for definitions of various syntactical items. Note that `rsTypeDef` is linked by default to `Typedef`, which may not fit with your colourscheme.
 - `rsAttribute`: This is applied to `#[attributes]`, including `#[derive(...)]` for example. Arguably this should link to `Macro` (since attributes are usually defined with procedural macros), but I personally find it nicer when `rsAttribute` is highlighted as a keyword.
 
+## Todo
+
+- `r# ... #` syntax
+- Format string parameters, e.g. `"{}"`, `"{:?}"`, `"{:#?}"`, `"{named}"`
+
 ## Colophon
 
 All screenshots use [xcodedark](https://github.com/arzg/vim-colors-xcode) with the SF Mono font in the Medium weight, with iTerm configured to use the Bold weight for bold text (rather than Heavy).
