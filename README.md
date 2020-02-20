@@ -50,7 +50,7 @@ To help you tell the two apart I have linked `Operator` to `Statement` in the ne
 
 ![](https://raw.githubusercontent.com/arzg/resources/master/vim-rust-syntax-ext/PunctuationOtherThemes.png)
 
-Field accesses are highlighted as `Identifer`s (which happens to be the same as the `Function`s with this theme):
+Field accesses are highlighted as `Identifer`s (which happen to get the same highlighting as `Function`s with this theme):
 
 ![](https://raw.githubusercontent.com/arzg/resources/master/vim-rust-syntax-ext/FieldAccess.png)
 
