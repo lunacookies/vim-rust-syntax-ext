@@ -77,4 +77,4 @@ Here are some of the more important links you may want to customise:
 
 ## Colophon
 
-All screenshots use [xcodedark](https://github.com/arzg/vim-colors-xcode) with the SF Mono font in the Medium weight, with iTerm configured to use the Bold weight for bold text (rather than Heavy).
+All screenshots use [xcodedark](https://github.com/arzg/vim-colors-xcode) (which takes advantage of the aforementioned highlight groups) with the SF Mono font in the Medium weight, with iTerm configured to use the Bold weight for bold text (rather than Heavy).
