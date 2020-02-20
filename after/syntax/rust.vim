@@ -129,6 +129,12 @@ syntax match rsCharacter "'.'"
 syntax match rsUserType '\v<[A-Z][A-Za-z0-9]*' nextgroup=rsTypeParams
 
 "
+" Types from other modules
+"
+
+syntax match rsForeignType '\v(::)@<=[A-Z][A-Za-z0-9]*' nextgroup=rsTypeParams
+
+"
 " Standard library types
 "
 
@@ -143,6 +149,12 @@ endfor
 "
 
 syntax match rsUserConst '\v<[A-Z][A-Z0-9_]+>'
+
+"
+" Constants from other modules
+"
+
+syntax match rsForeignConst '\v(::)@<=[A-Z][A-Z0-9_]+>'
 
 "
 " Standard library constants
@@ -161,6 +173,12 @@ endfor
 syntax match rsUserMacro '\v<[a-z][a-z0-9_]*!'
 
 "
+" Macros from other modules
+"
+
+syntax match rsForeignMacro '\v(::)@<=[a-z][a-z0-9_]*!'
+
+"
 " Standard library macros
 "
 
@@ -175,6 +193,12 @@ endfor
 "
 
 syntax match rsUserFunc '\v[a-z][a-z0-9_]*(\()@='
+
+"
+" Functions from other modules
+"
+
+syntax match rsForeignFunc '\v(::)@<=[a-z][a-z0-9_]*(\()@='
 
 "
 " Standard library functions
@@ -302,6 +326,10 @@ highlight default link rsDelimiter Delimiter
 highlight default link rsDocComment SpecialComment
 highlight default link rsFieldAccess Identifier
 highlight default link rsFloat Float
+highlight default link rsForeignConst Constant
+highlight default link rsForeignFunc Function
+highlight default link rsForeignMacro Macro
+highlight default link rsForeignType Type
 highlight default link rsFuncDef Function
 highlight default link rsIdentDef Identifier
 highlight default link rsInclude Include
