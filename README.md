@@ -56,3 +56,13 @@ vim-rust-syntax-ext also highlights lifetimes and attributes:
 
 ![](https://raw.githubusercontent.com/arzg/resources/master/vim-rust-syntax-ext/Lifetimes.png)
 ![](https://raw.githubusercontent.com/arzg/resources/master/vim-rust-syntax-ext/Derive.png)
+
+## Note for colourscheme authors
+
+I have made sure that it is as easy as possible to take advantage of vim-rust-syntax-ext’s highlighting as a colourscheme designer, by using `highlight default link` instead of `highlight link` so that you can override any links this plugin makes. Additionally, as much as possible, every single syntactical element has its own highlight group so that you can be as granular as you want with your adjustments. To give you an idea of what I mean, the `let` keyword (`rsLet`) and macros that come with the standard library (`rsLibraryMacro`) both get their own highlight groups. I didn’t want to make any assumptions, however, so I have linked all of vim-rust-syntax-ext’s highlight groups to the standard ones found in `:help group-name`. This means, for example, that `rsLibraryMacro` and `rsUserMacro` are not differentiated by default.
+
+Here are some of the more important links you may want to customise:
+
+- `rs{User,Foreign,Library}{Type,Func,Macro,Ident}`: The `Library` set of highlight groups is for items from the standard library, the `Foreign` set of groups is for items from another module, and `User` is essentially for everything else. In case I haven’t explained well, some examples of these highlight groups include `rsUserType`, `rsLibraryFunc`, and so on.
+- `rs{Type,Func,Ident}Def`: These highlight groups are used for definitions of various syntactical items. Note that `rsTypeDef` is linked by default to `Typedef`, which may not fit with your colourscheme.
+- `rsAttribute`: This is applied to `#[attributes]`, including `#[derive(...)]` for example. Arguably this should link to `Macro` (since attributes are usually defined with procedural macros), but I personally find it nicer when `rsAttribute` is highlighted as a keyword.
