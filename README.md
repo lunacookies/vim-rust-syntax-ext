@@ -1,6 +1,6 @@
 # vim-rust-syntax-ext
 
-This is a Vim plugin that enhances Rust syntax highlighting. It is ideally used in conjunction with [the official plugin](https://github.com/rust-lang/rust.vim) so that you can get all the latest non-syntax-related features.
+This is a Vim plugin that enhances Rust syntax highlighting – it does nothing else. This means that it is ideally used in conjunction with [the official plugin](https://github.com/rust-lang/rust.vim), so that you can get all the latest non-syntax-related features.
 
 ## Why would I use this plugin when the existing Rust syntax highlighting is good enough?
 
