@@ -262,7 +262,7 @@ syntax region rsPattern
             \ start='('
             \ end=')'
             \ contained
-            \ contains=rsMut,rsDelimiter,rsOperator,rsLibraryType,rsUserType,rsIdentDef
+            \ contains=rsMut,rsDelimiter,rsOperator,rsLibraryType,rsUserType,rsIdentDef,rsUnderscore
 
 "
 " Field access
