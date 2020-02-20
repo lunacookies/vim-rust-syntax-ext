@@ -40,11 +40,11 @@ You might worry that that would break the highlighting of enum variants such as 
 
 ![](https://raw.githubusercontent.com/arzg/resources/master/vim-rust-syntax-ext/OriginOfThingsEnums.png)
 
-Another one of vim-rust-syntax-ext’s unique features is its careful highlighting of punctuation. With this colourscheme, both delimiters and operators are highlighted the same:
+Another one of vim-rust-syntax-ext’s unique features is its careful highlighting of punctuation. With my colourscheme, both delimiters and operators are highlighted the same:
 
 ![](https://raw.githubusercontent.com/arzg/resources/master/vim-rust-syntax-ext/Punctuation.png)
 
-A large number of Vim colourschemes link `Operator` to `Statement`. I have recreated this effect here, so you can tell the two apart. Note how the less than and greater than operators are highlighted as, well, operators, while when they are used to denote a type parameter they are highlighted as delimiters.
+To help you tell the two apart I have linked `Operator` to `Statement` in the next screenshot, which is also a common practice of many Vim colourschemes. Note how the less than and greater than operators are highlighted as, well, operators, while when they are used to denote a type parameter they are highlighted as delimiters.
 
 ![](https://raw.githubusercontent.com/arzg/resources/master/vim-rust-syntax-ext/PunctuationOtherThemes.png)
 
