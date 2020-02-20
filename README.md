@@ -68,3 +68,7 @@ Here are some of the more important links you may want to customise:
 - `rs{User,Foreign,Library}{Type,Func,Macro,Ident}`: The `Library` set of highlight groups is for items from the standard library, the `Foreign` set of groups is for items from another module, and `User` is essentially for everything else. In case I haven’t explained well, some examples of these highlight groups include `rsUserType`, `rsLibraryFunc`, and so on.
 - `rs{Type,Func,Ident}Def`: These highlight groups are used for definitions of various syntactical items. Note that `rsTypeDef` is linked by default to `Typedef`, which may not fit with your colourscheme.
 - `rsAttribute`: This is applied to `#[attributes]`, including `#[derive(...)]` for example. Arguably this should link to `Macro` (since attributes are usually defined with procedural macros), but I personally find it nicer when `rsAttribute` is highlighted as a keyword.
+
+## Colophon
+
+All screenshots use [xcodedark](https://github.com/arzg/vim-colors-xcode) with the SF Mono font in the Medium weight, with iTerm configured to use the Bold weight for bold text (rather than Heavy).
