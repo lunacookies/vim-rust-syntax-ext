@@ -73,6 +73,7 @@ Here are some of the more important links you may want to customise:
 
 - `r# ... #` syntax
 - Format string parameters, e.g. `"{}"`, `"{:?}"`, `"{:#?}"`, `"{named}"`
+- Markdown and code in doc comments
 
 ## Colophon
 
