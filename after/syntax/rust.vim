@@ -171,10 +171,20 @@ for s:standardLibraryMacro in s:standardLibraryMacros
 endfor
 
 "
-" Functions
+" User-defined functions
 "
 
-syntax match rsFunction '\v[a-z][a-z0-9_]*(\()@='
+syntax match rsUserFunc '\v[a-z][a-z0-9_]*(\()@='
+
+"
+" Standard library functions
+"
+
+let s:standardLibraryFuncs = ["abort", "add_with_overflow", "align_of", "align_of_val", "alloc", "alloc_zeroed", "args", "args_os", "arith_offset", "assume", "atomic_and", "atomic_and_acq", "atomic_and_acqrel", "atomic_and_rel", "atomic_and_relaxed", "atomic_cxchg", "atomic_cxchg_acq", "atomic_cxchg_acq_failrelaxed", "atomic_cxchg_acqrel", "atomic_cxchg_acqrel_failrelaxed", "atomic_cxchg_failacq", "atomic_cxchg_failrelaxed", "atomic_cxchg_rel", "atomic_cxchg_relaxed", "atomic_cxchgweak", "atomic_cxchgweak_acq", "atomic_cxchgweak_acq_failrelaxed", "atomic_cxchgweak_acqrel", "atomic_cxchgweak_acqrel_failrelaxed", "atomic_cxchgweak_failacq", "atomic_cxchgweak_failrelaxed", "atomic_cxchgweak_rel", "atomic_cxchgweak_relaxed", "atomic_fence", "atomic_fence_acq", "atomic_fence_acqrel", "atomic_fence_rel", "atomic_load", "atomic_load_acq", "atomic_load_relaxed", "atomic_load_unordered", "atomic_max", "atomic_max_acq", "atomic_max_acqrel", "atomic_max_rel", "atomic_max_relaxed", "atomic_min", "atomic_min_acq", "atomic_min_acqrel", "atomic_min_rel", "atomic_min_relaxed", "atomic_nand", "atomic_nand_acq", "atomic_nand_acqrel", "atomic_nand_rel", "atomic_nand_relaxed", "atomic_or", "atomic_or_acq", "atomic_or_acqrel", "atomic_or_rel", "atomic_or_relaxed", "atomic_singlethreadfence", "atomic_singlethreadfence_acq", "atomic_singlethreadfence_acqrel", "atomic_singlethreadfence_rel", "atomic_store", "atomic_store_rel", "atomic_store_relaxed", "atomic_store_unordered", "atomic_umax", "atomic_umax_acq", "atomic_umax_acqrel", "atomic_umax_rel", "atomic_umax_relaxed", "atomic_umin", "atomic_umin_acq", "atomic_umin_acqrel", "atomic_umin_rel", "atomic_umin_relaxed", "atomic_xadd", "atomic_xadd_acq", "atomic_xadd_acqrel", "atomic_xadd_rel", "atomic_xadd_relaxed", "atomic_xchg", "atomic_xchg_acq", "atomic_xchg_acqrel", "atomic_xchg_rel", "atomic_xchg_relaxed", "atomic_xor", "atomic_xor_acq", "atomic_xor_acqrel", "atomic_xor_rel", "atomic_xor_relaxed", "atomic_xsub", "atomic_xsub_acq", "atomic_xsub_acqrel", "atomic_xsub_rel", "atomic_xsub_relaxed", "bitreverse", "black_box", "breakpoint", "bswap", "caller_location", "canonicalize", "catch_unwind", "ceilf32", "ceilf64", "channel", "compiler_fence", "copy", "copy_nonoverlapping", "copysignf32", "copysignf64", "cosf32", "cosf64", "create_dir", "create_dir_all", "ctlz", "ctlz_nonzero", "ctpop", "cttz", "cttz_nonzero", "current", "current_dir", "current_exe", "dealloc", "decode_utf16", "discriminant", "discriminant_value", "drop", "drop_in_place", "empty", "eq", "escape_default", "exact_div", "exit", "exp2f32", "exp2f64", "expf32", "expf64", "fabsf32", "fabsf64", "fadd_fast", "fdiv_fast", "fence", "float_to_int_approx_unchecked", "floorf32", "floorf64", "fmaf32", "fmaf64", "fmul_fast", "forget", "forget_unsized", "format", "frem_fast", "from_boxed_utf8_unchecked", "from_digit", "from_fn", "from_mut", "from_raw_parts", "from_raw_parts_mut", "from_ref", "from_u32", "from_u32_unchecked", "from_utf8", "from_utf8_mut", "from_utf8_unchecked", "from_utf8_unchecked_mut", "fsub_fast", "handle_alloc_error", "hard_link", "hash", "home_dir", "id", "identity", "init", "is_separator", "join_paths", "likely", "log10f32", "log10f64", "log2f32", "log2f64", "logf32", "logf64", "max", "max_by", "max_by_key", "maxnumf32", "maxnumf64", "metadata", "min", "min_align_of", "min_align_of_val", "min_by", "min_by_key", "minnumf32", "minnumf64", "miri_start_panic", "move_val_init", "mul_with_overflow", "nearbyintf32", "nearbyintf64", "needs_drop", "nontemporal_store", "null", "null_mut", "offset", "once", "once_with", "panic_if_uninhabited", "panicking", "parent_id", "park", "park_timeout", "park_timeout_ms", "powf32", "powf64", "powif32", "powif64", "pref_align_of", "prefetch_read_data", "prefetch_read_instruction", "prefetch_write_data", "prefetch_write_instruction", "ptr_offset_from", "read", "read_dir", "read_link", "read_to_string", "read_unaligned", "read_volatile", "realloc", "remove_dir", "remove_dir_all", "remove_file", "remove_var", "rename", "repeat", "repeat_with", "replace", "resume_unwind", "rintf32", "rintf64", "rotate_left", "rotate_right", "roundf32", "roundf64", "rustc_peek", "saturating_add", "saturating_sub", "set_alloc_error_hook", "set_current_dir", "set_hook", "set_permissions", "set_var", "sinf32", "sinf64", "sink", "size_of", "size_of_val", "sleep", "sleep_ms", "slice_from_raw_parts", "slice_from_raw_parts_mut", "soft_link", "spawn", "spin_loop", "spin_loop_hint", "split_paths", "sqrtf32", "sqrtf64", "stderr", "stdin", "stdout", "sub_with_overflow", "successors", "swap", "swap_nonoverlapping", "symlink", "symlink_dir", "symlink_file", "symlink_metadata", "sync_channel", "take", "take_alloc_error_hook", "take_hook", "temp_dir", "transmute", "transmute_copy", "truncf32", "truncf64", "try", "type_id", "type_name", "type_name_of_val", "unaligned_volatile_load", "unaligned_volatile_store", "unchecked_add", "unchecked_div", "unchecked_mul", "unchecked_rem", "unchecked_shl", "unchecked_shr", "unchecked_sub", "uninit", "uninitialized", "unlikely", "unreachable", "unreachable_unchecked", "var", "var_os", "vars", "vars_os", "volatile_copy_memory", "volatile_copy_nonoverlapping_memory", "volatile_load", "volatile_set_memory", "volatile_store", "wrapping_add", "wrapping_mul", "wrapping_sub", "write", "write_bytes", "write_unaligned", "write_volatile", "yield_now", "zeroed"]
+
+for s:standardLibraryFunc in s:standardLibraryFuncs
+    execute 'syntax match rsLibraryFunc "\v'. s:standardLibraryFunc . '(\()@="'
+endfor
 
 "
 " Type definitions
@@ -293,11 +303,11 @@ highlight default link rsDocComment SpecialComment
 highlight default link rsFieldAccess Identifier
 highlight default link rsFloat Float
 highlight default link rsFuncDef Function
-highlight default link rsFunction Function
 highlight default link rsIdentDef Identifier
 highlight default link rsInclude Include
 highlight default link rsKeyword Keyword
 highlight default link rsLibraryConst Constant
+highlight default link rsLibraryFunc Function
 highlight default link rsLibraryMacro Macro
 highlight default link rsLibraryType Type
 highlight default link rsLifetime Special
@@ -307,5 +317,6 @@ highlight default link rsRepeat Repeat
 highlight default link rsString String
 highlight default link rsTypeDef Typedef
 highlight default link rsUserConst Constant
+highlight default link rsUserFunc Function
 highlight default link rsUserMacro Macro
 highlight default link rsUserType Type
