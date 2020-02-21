@@ -2,6 +2,14 @@
 
 This is a Vim plugin that enhances Rust syntax highlighting – it does nothing else. This means that it is ideally used in conjunction with [the official plugin](https://github.com/rust-lang/rust.vim), so that you can get all the latest non-syntax-related features.
 
+## Installation
+
+If you don’t have a plugin manager of choice I recommend [vim-plug](https://github.com/junegunn/vim-plug):
+
+```viml
+Plug 'arzg/vim-rust-syntax-ext'
+```
+
 ## Why would I use this plugin when the existing Rust syntax highlighting is good enough?
 
 Here is a screenshot of some code using the official plugin, rust.vim:
