@@ -106,7 +106,7 @@ highlight default link rsWhere rsKeyword
 " Strings
 "
 
-syntax region rsString start='b\?"' skip='\\"' end='"'
+syntax region rsString start='b\?"' skip='\\"' end='"' contains=@Spell
 
 "
 " Lifetimes
@@ -315,9 +315,9 @@ syntax match rsOperator '&mut'
 " Comments
 "
 
-syntax region rsComment start='//' end='$'
-syntax region rsDocComment start='///' end='$'
-syntax region rsDocComment start='//!' end='$'
+syntax region rsComment start='//' end='$' contains=@Spell
+syntax region rsDocComment start='///' end='$' contains=@Spell
+syntax region rsDocComment start='//!' end='$' contains=@Spell
 
 syntax match rsCommentNote '\v[A-Z]+(:)@='
             \ contained
