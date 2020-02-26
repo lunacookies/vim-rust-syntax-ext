@@ -295,6 +295,16 @@ syntax region rsAttributeParenWrapped
             \ keepend
 
 "
+" Macro identifiers
+"
+
+" Macros frequently interpolate identifiers with names like #foobar.
+syntax match rsUserIdent '\v#[a-z][a-z0-9]*'
+
+" macro_rules! uses $foobar for parameters
+syntax match rsUserIdent '\v\$[a-z][a-z0-9]*'
+
+"
 " Delimiters
 "
 
@@ -361,5 +371,6 @@ highlight default link rsString String
 highlight default link rsTypeDef Typedef
 highlight default link rsUserConst Constant
 highlight default link rsUserFunc Function
+highlight default link rsUserIdent Identifier
 highlight default link rsUserMacro Macro
 highlight default link rsUserType Type
