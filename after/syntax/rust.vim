@@ -316,12 +316,17 @@ syntax match rsOperator '&mut'
 "
 
 syntax region rsComment start='//' end='$' contains=@Spell
+
+syntax region rsBlockComment start='/\*' end='\*/' contains=@Spell
+
 syntax region rsDocComment start='///' end='$' contains=@Spell
 syntax region rsDocComment start='//!' end='$' contains=@Spell
 
 syntax match rsCommentNote '\v[A-Z]+(:)@='
             \ contained
             \ containedin=rsComment,rsDocComment
+
+highlight default link rsBlockComment rsComment
 
 "
 " Default linkages
