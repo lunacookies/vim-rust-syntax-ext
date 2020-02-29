@@ -103,6 +103,16 @@ highlight default link rsUnsafe rsKeyword
 highlight default link rsWhere rsKeyword
 
 "
+" Booleans
+"
+
+syntax keyword rsTrue true
+syntax keyword rsFalse false
+
+highlight default link rsTrue rsBoolean
+highlight default link rsFalse rsBoolean
+
+"
 " Strings
 "
 
@@ -346,6 +356,7 @@ highlight default link rsBlockComment rsComment
 "
 
 highlight default link rsAttribute rsKeyword
+highlight default link rsBoolean Boolean
 highlight default link rsCharacter Character
 highlight default link rsComment Comment
 highlight default link rsCommentNote Todo
