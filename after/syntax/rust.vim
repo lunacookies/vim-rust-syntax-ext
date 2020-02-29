@@ -109,6 +109,12 @@ highlight default link rsWhere rsKeyword
 syntax region rsString start='b\?"' skip='\\"' end='"' contains=@Spell
 
 "
+" Field access
+"
+
+syntax match rsFieldAccess '\v(\.)@<=[a-z][a-z0-9_]*>(\()@!'
+
+"
 " Lifetimes
 "
 
@@ -204,6 +210,9 @@ endfor
 
 syntax match rsUserFunc '\v[a-z][a-z0-9_]*(\()@='
 
+syntax match rsUserMethod '\v(\.)@<=[a-z][a-z0-9_]*(\(|::)@='
+highlight default link rsUserMethod rsUserFunc
+
 "
 " Functions from other modules
 "
@@ -263,12 +272,6 @@ syntax region rsPattern
             \ end=')'
             \ contained
             \ contains=rsMut,rsRef,rsDelimiter,rsOperator,rsLibraryType,rsUserType,rsIdentDef,rsUnderscore
-
-"
-" Field access
-"
-
-syntax match rsFieldAccess '\v(\.)@<=[a-z][a-z0-9_]*>(\()@!'
 
 "
 " Numbers
