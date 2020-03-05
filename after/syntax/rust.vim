@@ -394,3 +394,7 @@ highlight default link rsUserFunc Function
 highlight default link rsUserIdent Identifier
 highlight default link rsUserMacro Macro
 highlight default link rsUserType Type
+
+" Account for the vast majority of colourschemes not highlighting string
+" delimiters explicitly.
+highlight default link StringDelimiter String
