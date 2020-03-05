@@ -116,7 +116,12 @@ highlight default link rsFalse rsBoolean
 " Strings
 "
 
-syntax region rsString start='b\?"' skip='\\"' end='"' contains=@Spell
+syntax region rsString
+            \ matchgroup=rsQuote
+            \ start='b\?"'
+            \ skip='\\"'
+            \ end='"'
+            \ contains=@Spell
 
 "
 " Field access
@@ -382,6 +387,7 @@ highlight default link rsNumber Number
 highlight default link rsOperator Operator
 highlight default link rsRepeat Repeat
 highlight default link rsString String
+highlight default link rsQuote StringDelimiter
 highlight default link rsTypeDef Typedef
 highlight default link rsUserConst Constant
 highlight default link rsUserFunc Function
