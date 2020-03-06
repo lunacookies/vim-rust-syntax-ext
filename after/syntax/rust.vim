@@ -352,10 +352,10 @@ highlight default link rsCharacter Character
 highlight default link rsComment Comment
 highlight default link rsCommentNote Todo
 highlight default link rsConditional Conditional
-highlight default link rsCrateConst Constant
-highlight default link rsCrateFunc Function
-highlight default link rsCrateMacro Macro
-highlight default link rsCrateType Type
+highlight default link rsCrateConst rsUserConst
+highlight default link rsCrateFunc rsUserFunc
+highlight default link rsCrateMacro rsUserMacro
+highlight default link rsCrateType rsUserType
 highlight default link rsDelimiter Delimiter
 highlight default link rsDocComment SpecialComment
 highlight default link rsFieldAccess Identifier
