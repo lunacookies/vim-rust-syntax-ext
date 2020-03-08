@@ -58,7 +58,7 @@ To help you tell the two apart I have linked `Operator` to `Statement` in the ne
 
 ![](https://raw.githubusercontent.com/arzg/resources/master/vim-rust-syntax-ext/PunctuationOtherThemes.png)
 
-Lifetimes have been paid careful attention in vim-rust-syntax-ext. This screenshot shows that lifetimes are highlighted with a similar logic to variables\*: ‘special’ lifetimes like `'static` and `'_` are highlighted as library constants,\* lifetime definitions are highlighted like variable definitions\* (look at `enum Token<'a>`), and lifetime usages are highlighted the same way user variable usages are highlighted.\*
+Lifetimes have been paid careful attention in vim-rust-syntax-ext. This screenshot shows that lifetimes are highlighted with a similar logic to variables:\* ‘special’ lifetimes like `'static` and `'_` are highlighted as library constants,\* lifetime definitions are highlighted like variable definitions\* (look at `enum Token<'a>`), and lifetime usages are highlighted the same way user variable usages are highlighted.\*
 
 ![](https://raw.githubusercontent.com/arzg/resources/master/vim-rust-syntax-ext/Lifetimes.png)
 
