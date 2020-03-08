@@ -275,6 +275,14 @@ syntax region rsPattern
             \ contains=rsMut,rsRef,rsDelimiter,rsOperator,rsLibraryType,rsUserType,rsIdentDef,rsUnderscore
 
 "
+" Lifetime definitions
+"
+
+syntax match rsLifetimeDef "'[a-z][a-z0-9_]*"
+            \ contained
+            \ containedin=rsTypeDefParams
+
+"
 " Numbers
 "
 
@@ -373,6 +381,7 @@ highlight default link rsLibraryFunc Function
 highlight default link rsLibraryMacro Macro
 highlight default link rsLibraryType Type
 highlight default link rsLifetime Special
+highlight default link rsLifetimeDef rsLifetime
 highlight default link rsNumber Number
 highlight default link rsOperator Operator
 highlight default link rsQuote StringDelimiter
