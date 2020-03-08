@@ -74,7 +74,8 @@ I have made sure that it is as easy as possible to take advantage of vim-rust-sy
 Here are some of the more important links you may want to customise:
 
 - `rs{User,Crate,Foreign,Library}{Type,Func,Macro,Ident}`: The `Library` set of highlight groups is for items from the standard library, the `Foreign` set of groups is for items from another module, `Crate` is for items accessed by `crate::`, and `User` is essentially for everything else. By default the `Crate` highlight groups link to the `User` highlight groups. In case I haven’t explained well, some examples of these highlight groups include `rsUserType`, `rsLibraryFunc`, and so on.
-- `rs{Type,Func,Ident}Def`: These highlight groups are used for definitions of various syntactical items. Note that `rsTypeDef` is linked by default to `Typedef`, which may not fit with your colourscheme.
+- `rs{Type,Func,Ident,Lifetime}Def`: These highlight groups are used for definitions of various syntactical items. Note that `rsTypeDef` is linked by default to `Typedef`, which may not fit with your colourscheme.
+- `rs{User,Special}Lifetime`: With ‘special’ lifetimes I really mean `'static` and `'_` – all other lifetimes get `rsUserLifetime`.
 - `rsAttribute`: This is applied to `#[attributes]`, including `#[derive(...)]` for example. Arguably this should link to `Macro` (since attributes are usually defined with procedural macros), but I personally find it nicer when `rsAttribute` is highlighted as a keyword.
 
 ## Todo
