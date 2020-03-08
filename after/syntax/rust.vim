@@ -130,14 +130,6 @@ syntax region rsString
 syntax match rsFieldAccess '\v(\.)@<=[a-z][a-z0-9_]*>(\()@!'
 
 "
-" Lifetimes
-"
-
-syntax match rsLifetime "'_" " Inferred
-syntax match rsLifetime "'static" " Static
-syntax match rsLifetime "'[a-z][a-z0-9_]*"
-
-"
 " Characters
 "
 
@@ -229,6 +221,18 @@ let s:standardLibraryFuncs = ["abort", "add_with_overflow", "align_of", "align_o
 for s:standardLibraryFunc in s:standardLibraryFuncs
     execute 'syntax match rsLibraryFunc "\v'. s:standardLibraryFunc . '(\()@="'
 endfor
+
+"
+" Lifetimes
+"
+
+syntax match rsUserLifetime "'[a-z][a-z0-9_]*"
+
+syntax match rsInferredLifetime "'_"
+syntax match rsStaticLifetime "'static"
+
+highlight default link rsInferredLifetime rsSpecialLifetime
+highlight default link rsStaticLifetime rsSpecialLifetime
 
 "
 " Type definitions
@@ -380,17 +384,18 @@ highlight default link rsLibraryConst Constant
 highlight default link rsLibraryFunc Function
 highlight default link rsLibraryMacro Macro
 highlight default link rsLibraryType Type
-highlight default link rsLifetime Special
-highlight default link rsLifetimeDef rsLifetime
+highlight default link rsLifetimeDef Special
 highlight default link rsNumber Number
 highlight default link rsOperator Operator
 highlight default link rsQuote StringDelimiter
 highlight default link rsRepeat Repeat
+highlight default link rsSpecialLifetime Special
 highlight default link rsString String
 highlight default link rsTypeDef Typedef
 highlight default link rsUserConst Constant
 highlight default link rsUserFunc Function
 highlight default link rsUserIdent Identifier
+highlight default link rsUserLifetime Special
 highlight default link rsUserMacro Macro
 highlight default link rsUserType Type
 
