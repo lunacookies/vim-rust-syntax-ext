@@ -42,31 +42,31 @@ syntax keyword rsAs as
 syntax keyword rsAsync async
 syntax keyword rsAwait await
 syntax keyword rsBreak break
-syntax keyword rsConst const nextgroup=rsIdentDef skipwhite skipempty
+syntax keyword rsConst const nextgroup=rsIdentDef,rsUnusedIdentDef skipwhite skipempty
 syntax keyword rsContinue continue
 syntax keyword rsCrate crate
 syntax keyword rsDyn dyn
-syntax keyword rsEnum enum nextgroup=rsTypeDef skipwhite skipempty
+syntax keyword rsEnum enum nextgroup=rsTypeDef,rsUnusedTypeDef skipwhite skipempty
 syntax keyword rsExtern extern
-syntax keyword rsFn fn nextgroup=rsFuncDef skipwhite skipempty
+syntax keyword rsFn fn nextgroup=rsFuncDef,rsUnusedFuncDef skipwhite skipempty
 syntax keyword rsImpl impl nextgroup=rsTypeDefParams
 syntax keyword rsIn in
-syntax keyword rsLet let nextgroup=rsIdentDef,rsMut,rsRef,rsPattern skipwhite skipempty
+syntax keyword rsLet let nextgroup=rsIdentDef,rsUnusedIdentDef,rsMut,rsRef,rsPattern skipwhite skipempty
 syntax keyword rsMod mod
 syntax keyword rsMove move
-syntax keyword rsMut mut nextgroup=rsIdentDef,rsLibraryType,rsSelfType,rsSelfValue,rsUserType skipwhite skipempty
+syntax keyword rsMut mut nextgroup=rsIdentDef,rsUnusedIdentDef,rsLibraryType,rsSelfType,rsSelfValue,rsUserType skipwhite skipempty
 syntax keyword rsPub pub
-syntax keyword rsRef ref nextgroup=rsIdentDef,rsMut skipwhite skipempty
+syntax keyword rsRef ref nextgroup=rsIdentDef,rsUnusedIdentDef,rsMut skipwhite skipempty
 syntax keyword rsReturn return
 syntax keyword rsSelfType Self
 syntax keyword rsSelfValue self
-syntax keyword rsStatic static nextgroup=rsIdentDef,rsRef skipwhite skipempty
-syntax keyword rsStruct struct nextgroup=rsTypeDef skipwhite skipempty
+syntax keyword rsStatic static nextgroup=rsIdentDef,rsUnusedIdentDef,rsRef skipwhite skipempty
+syntax keyword rsStruct struct nextgroup=rsTypeDef,rsUnusedTypeDef skipwhite skipempty
 syntax keyword rsSuper super
-syntax keyword rsTrait trait nextgroup=rsTypeDef skipwhite skipempty
-syntax keyword rsTypeAlias type nextgroup=rsTypeDef skipwhite skipempty
+syntax keyword rsTrait trait nextgroup=rsTypeDef,rsUnusedTypeDef skipwhite skipempty
+syntax keyword rsTypeAlias type nextgroup=rsTypeDef,rsUnusedTypeDef skipwhite skipempty
 syntax keyword rsUnderscore _
-syntax keyword rsUnion union nextgroup=rsTypeDef skipwhite skipempty
+syntax keyword rsUnion union nextgroup=rsTypeDef,rsUnusedTypeDef skipwhite skipempty
 syntax keyword rsUnsafe unsafe
 syntax keyword rsWhere where
 
@@ -242,6 +242,12 @@ syntax match rsTypeDef '\v[A-Z][A-Za-z0-9]*'
             \ contained
             \ nextgroup=rsTypeDefParams
 
+syntax match rsUnusedTypeDef '\v_[A-Za-z0-9]+'
+            \ contained
+            \ nextgroup=rsTypeDefParams
+
+highlight default link rsUnusedTypeDef rsTypeDef
+
 " Type parameters
 syntax region rsTypeDefParams
             \ matchgroup=rsDelimiter
@@ -264,6 +270,12 @@ syntax match rsFuncDef '\v<[a-z][a-z0-9_]*'
             \ contained
             \ nextgroup=rsTypeDefParams
 
+syntax match rsUnusedFuncDef '\v<_[a-z0-9_]+'
+            \ contained
+            \ nextgroup=rsTypeDefParams
+
+highlight default link rsUnusedFuncDef rsFuncDef
+
 "
 " Identifier definitions
 "
@@ -271,12 +283,17 @@ syntax match rsFuncDef '\v<[a-z][a-z0-9_]*'
 syntax match rsIdentDef '\v<[a-z][a-z0-9_]*>' contained display
 syntax match rsIdentDef '\v<[A-Z][A-Z0-9_]*>' contained display
 
+syntax match rsUnusedIdentDef '\v<_[a-z0-9_]+>' contained display
+syntax match rsUnusedIdentDef '\v<_[A-Z0-9_]+>' contained display
+
+highlight default link rsUnusedIdentDef rsIdentDef
+
 syntax region rsPattern
             \ matchgroup=rsDelimiter
             \ start='('
             \ end=')'
             \ contained
-            \ contains=rsMut,rsRef,rsDelimiter,rsOperator,rsLibraryType,rsUserType,rsIdentDef,rsUnderscore
+            \ contains=rsMut,rsRef,rsDelimiter,rsOperator,rsLibraryType,rsUserType,rsIdentDef,rsUnusedIdentDef,rsUnderscore
 
 "
 " Lifetime definitions
