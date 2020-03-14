@@ -46,13 +46,13 @@ One of vim-rust-syntax-ext’s most unique features is that it differentiates\* 
 
 ![](https://raw.githubusercontent.com/arzg/resources/master/vim-rust-syntax-ext/OriginOfThings.png)
 
-vim-rust-syntax-ext makes sure that items from the current crate are still highlighted as local items:
-
-![](https://raw.githubusercontent.com/arzg/resources/master/vim-rust-syntax-ext/OriginOfThingsCrate.png)
-
 You might worry that this would break the highlighting of enum variants such as `LocalEnum::Variant`, because vim-rust-syntax-ext would think that `Variant` is a type from a separate module. This is not the case, however:
 
 ![](https://raw.githubusercontent.com/arzg/resources/master/vim-rust-syntax-ext/OriginOfThingsEnums.png)
+
+vim-rust-syntax-ext makes sure that items from the current crate are still highlighted as local items:
+
+![](https://raw.githubusercontent.com/arzg/resources/master/vim-rust-syntax-ext/OriginOfThingsCrate.png)
 
 Another one of vim-rust-syntax-ext’s unique features is its careful highlighting of punctuation. With my colourscheme, both delimiters and operators are highlighted the same:
 
