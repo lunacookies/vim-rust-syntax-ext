@@ -42,9 +42,13 @@ Now that we’re on the subject of types, look at how the type parameter definit
 
 ![](https://raw.githubusercontent.com/arzg/resources/master/vim-rust-syntax-ext/TypeParameters.png)
 
-One of vim-rust-syntax-ext’s most unique features is that it differentiates\* between things from your project (internally things in the top-level scope and things accessed through `crate::` are differentiated), things from the standard library, and things from other modules. This feature was inspired by Xcode, which does this for Swift (but by using code analysis, not regular expressions!). *Note that the constants and function calls being highlighted the same is just a quirk of the colourscheme I’m using. The same goes for things from other modules and things from the standard library being highlighted the same – you could make them different if you wanted to do so.*
+One of vim-rust-syntax-ext’s most unique features is that it differentiates\* between things from your project, things from the standard library, and things from other modules. This feature was inspired by Xcode, which does this for Swift (but by using code analysis, not regular expressions!). *Note that the constants and function calls being highlighted the same is just a quirk of the colourscheme I’m using. The same goes for things from other modules and things from the standard library being highlighted the same – you could make them different if you wanted to do so.*
 
 ![](https://raw.githubusercontent.com/arzg/resources/master/vim-rust-syntax-ext/OriginOfThings.png)
+
+vim-rust-syntax-ext makes sure that items from the current crate are still highlighted as local items:
+
+![](https://raw.githubusercontent.com/arzg/resources/master/vim-rust-syntax-ext/OriginOfThingsCrate.png)
 
 You might worry that this would break the highlighting of enum variants such as `LocalEnum::Variant`, because vim-rust-syntax-ext would think that `Variant` is a type from a separate module. This is not the case, however:
 
@@ -76,7 +80,7 @@ I have made sure that it is as easy as possible to take advantage of vim-rust-sy
 
 Here are some of the more important links you may want to customise:
 
-- `rs{User,Crate,Foreign,Library}{Type,Func,Macro,Ident}`: The `Library` set of highlight groups is for items from the standard library, the `Foreign` set of groups is for items from another module, `Crate` is for items accessed by `crate::`, and `User` is essentially for everything else. By default the `Crate` highlight groups link to the `User` highlight groups. In case I haven’t explained well, some examples of these highlight groups include `rsUserType`, `rsLibraryFunc`, and so on.
+- `rs{User,Crate,Foreign,Library}{Type,Func,Macro,Ident}`: The `Library` set of highlight groups is for items from the standard library; the `Foreign` set of groups is for items from another module; `Crate`, which by default links to the `User` groups, is for items accessed by `crate::`; and `User` is essentially for everything else. By default the `Crate` highlight groups link to the `User` highlight groups. In case I haven’t explained well, some examples of these highlight groups include `rsUserType`, `rsLibraryFunc`, and so on.
 - `rs{Type,Func,Ident,Lifetime}Def`: These highlight groups are used for definitions of various syntactical items. Note that `rsTypeDef` is linked by default to `Typedef`, which may not fit with your colourscheme.
 - `rs{User,Special}Lifetime`: With ‘special’ lifetimes I really mean `'static` and `'_` – all other lifetimes get `rsUserLifetime`.
 - `rsAttribute`: This is applied to `#[attributes]`, including `#[derive(...)]` for example. Arguably this should link to `Macro` (since attributes are usually defined with procedural macros), but I personally find it nicer when `rsAttribute` is highlighted as a keyword.
