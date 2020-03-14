@@ -66,7 +66,7 @@ Lifetimes have been paid careful attention in vim-rust-syntax-ext. This screensh
 
 ![](https://raw.githubusercontent.com/arzg/resources/master/vim-rust-syntax-ext/Lifetimes.png)
 
-Field accesses are highlighted as `Identifer`s (which happen to get the same highlighting as `Function`s with this theme):
+Field accesses are highlighted as `Identifer`s:
 
 ![](https://raw.githubusercontent.com/arzg/resources/master/vim-rust-syntax-ext/FieldAccess.png)
 
