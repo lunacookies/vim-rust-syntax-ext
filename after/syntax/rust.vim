@@ -151,7 +151,7 @@ endfunction
 " ‘::’, which is then preceded by zero or more module names separated by ‘::’,
 " which is finally preceded by ‘crate::’.
 function! MatchCrateLocal(regex, groupName, extraParams)
-    execute 'syntax match ' . a:groupName . ' "\v((crate::)([a-z][a-z0-9_]*::)*([A-Z][A-Za-z0-9]*::)*)@<=' . a:regex . '"' . a:extraParams
+    execute 'syntax match ' . a:groupName . ' "\v(crate::([a-z][a-z0-9_]*::)*([A-Z][A-Za-z0-9]*::)*)@<=' . a:regex . '"' . a:extraParams
 endfunction
 
 "
