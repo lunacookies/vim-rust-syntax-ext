@@ -332,10 +332,10 @@ syntax region rsAttributeParenWrapped
 "
 
 " Macros frequently interpolate identifiers with names like #foobar.
-syntax match rsUserIdent '\v#[a-z][a-z0-9]*'
+syntax match rsUserIdent '\v#[a-z][a-z0-9_]*'
 
 " macro_rules! uses $foobar for parameters
-syntax match rsUserIdent '\v\$[a-z][a-z0-9]*'
+syntax match rsUserIdent '\v\$[a-z][a-z0-9_]*'
 
 "
 " Delimiters
