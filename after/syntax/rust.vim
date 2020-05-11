@@ -355,38 +355,18 @@ syntax match rsOperator '[!%&/\*+<=>?\^-]\+'
 syntax match rsOperator '&mut'
 
 "
-" Comments
-"
-
-syntax region rsComment start='//' end='$' contains=@Spell
-
-syntax region rsBlockComment start='/\*' end='\*/' contains=@Spell
-
-syntax region rsDocComment start='///' end='$' contains=@Spell
-syntax region rsDocComment start='//!' end='$' contains=@Spell
-
-syntax match rsCommentNote '\v[A-Z]+(:)@='
-            \ contained
-            \ containedin=rsComment,rsDocComment
-
-highlight default link rsBlockComment rsComment
-
-"
 " Default linkages
 "
 
 highlight default link rsAttribute rsKeyword
 highlight default link rsBoolean Boolean
 highlight default link rsCharacter Character
-highlight default link rsComment Comment
-highlight default link rsCommentNote Todo
 highlight default link rsConditional Conditional
 highlight default link rsCrateConst rsUserConst
 highlight default link rsCrateFunc rsUserFunc
 highlight default link rsCrateMacro rsUserMacro
 highlight default link rsCrateType rsUserType
 highlight default link rsDelimiter Delimiter
-highlight default link rsDocComment SpecialComment
 highlight default link rsFieldAccess Identifier
 highlight default link rsFloat Float
 highlight default link rsForeignConst Constant
