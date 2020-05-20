@@ -382,7 +382,20 @@ syntax match rsCommentNote '\v[A-Z]+(:)@='
             \ contained
             \ containedin=rsComment,rsDocComment
 
+" The matchgroup highlights the ‘```’ as part of the surrounding comment.
+syntax region rsDocTest
+            \ matchgroup=rsDocComment 
+            \ start='```'
+            \ end='```'
+            \ contains=TOP
+            \ containedin=rsDocComment
+
+" This is used to ‘match away’ the ‘///’ at the start of each line in a
+" doctest. It is only allowed to exist within doctests.
+syntax match rsDocCommentHeader '///' containedin=rsDocTest contained
+
 highlight default link rsBlockComment rsComment
+highlight default link rsDocCommentHeader rsDocComment
 
 "
 " Default linkages
