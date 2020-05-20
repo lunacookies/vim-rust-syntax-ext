@@ -329,7 +329,7 @@ syntax match rsFloat '\v<[0-9_]+\.[0-9_]*(f(32|64))?'
 
 syntax region rsAttribute
             \ matchgroup=rsDelimiter
-            \ start='#\['
+            \ start='\v#!?\['
             \ skip='\v\(.*\)'
             \ end='\]'
 
