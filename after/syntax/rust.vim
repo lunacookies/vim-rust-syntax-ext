@@ -143,12 +143,6 @@ syntax region rsString
 syntax match rsFieldAccess '\v(\.)@<=[a-z][a-z0-9_]*>(\()@!'
 
 "
-" Characters
-"
-
-syntax match rsCharacter "'.'"
-
-"
 " Helpers for matching foreign and crate-local items
 "
 
@@ -349,6 +343,12 @@ syntax match rsUserIdent '\v#[a-z][a-z0-9_]*'
 
 " macro_rules! uses $foobar for parameters
 syntax match rsUserIdent '\v\$[a-z][a-z0-9_]*'
+
+"
+" Characters
+"
+
+syntax match rsCharacter "'.'"
 
 "
 " Delimiters
