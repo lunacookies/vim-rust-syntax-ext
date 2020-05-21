@@ -89,8 +89,8 @@ Here are some of the more important links you may want to customise:
 ## Todo
 
 - `r# ... #` syntax
-- Format string parameters, e.g. `"{}"`, `"{:?}"`, `"{:#?}"`, `"{named}"`
-- Markdown and code in doc comments
+- Format string parameters, e.g. `"{}"`, `"{:?}"`, `"{:#?}"`
+- Markdown in doc comments
 
 ## Colophon
 
