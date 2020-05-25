@@ -393,6 +393,7 @@ syntax region rsDocTest
 " This is used to ‘match away’ the ‘///’ at the start of each line in a
 " doctest. It is only allowed to exist within doctests.
 syntax match rsDocCommentHeader '///' containedin=rsDocTest contained
+syntax match rsDocCommentHeader '//!' containedin=rsDocTest contained
 
 highlight default link rsBlockComment rsComment
 highlight default link rsDocCommentHeader rsDocComment
